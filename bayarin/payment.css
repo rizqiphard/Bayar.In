@@ -1,0 +1,247 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background:url(gambar/shutterstock_248825623-1-1080x675.jpg) right / cover no-repeat;
+}
+
+main {
+  display: flex;
+  width: 667px;
+  height: 450px;
+  box-shadow: 0 0 16px rgba(0,0,0, .24);
+}
+
+/* CHECKOUT SECTION */
+
+.checkout {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 292px;
+  height: 450px;
+  background: linear-gradient(to bottom, rgba(0,0,0, .55), rgba(0,0,0, .94));
+}
+.checkout header {
+  width: 224px;
+  height: 42px;
+  border-bottom: 1px solid rgba(255,255,255, .12);
+}
+.checkout header h1 {
+  margin: 0 0 0 10px;
+  font: 500 12px/42px Dosis, sans-serif;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, .87);
+}
+
+/* purchases */
+
+.purchases {
+  flex-grow: 1;
+  width: 270px;
+  margin-top: 18px;
+}
+.purchase-item {
+  display: flex;
+  flex-flow: row nowrap;
+  margin-top: 10px;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+.purchase-item p { margin: 0; }
+.purchase-item .close-icon {
+  width: 40px;
+  height: 20px;
+  padding: 0;
+  margin-right: 6px;
+  border: none;
+  background: none;
+  fill: rgba(255,255,255, .87);
+  outline: none;
+}
+.purchase-item .close-icon:hover {
+  fill: #F44336;
+  cursor: pointer;
+}
+.purchase-item .purchase-name {
+  font-size: 11px;
+}
+.purchase-item .purchase-price {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* result */
+
+.checkout .result {
+  width: 224px;
+  color: white;
+  border-top: 1px solid rgba(255,255,255, .12);
+  font: 300 20px "Dosis", sans-serif;
+  text-align: right;
+}
+
+/* PAYMENT SECTION */
+
+.payment {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 375px;
+  height: 450px;
+  background: white;
+}
+.payment header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 315px;
+  height: 42px;
+  border-bottom: 1px solid rgba(0,0,0, .12);
+}
+.payment header h1 {
+  margin: 0 0 0 10px;
+  font: 500 12px Dosis, sans-serif;
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, .87);
+}
+.payment header a {
+  display: flex;
+  padding: 2px;
+  border: 1px solid #0D47A1;
+  border-radius: 2px;
+  font: 10px Dosis, sans-serif;
+  text-decoration: none;
+  color: #0D47A1;
+  fill: #0D47A1;
+  transition: all .2s ease;
+}
+.payment header a .icon-text {
+  margin: 0 4px;
+}
+.payment header a:hover {
+  border-color: #00C853;
+  color: red;
+  fill: black;
+}
+
+/* payment form */
+
+.payment form {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+}
+.payment .name-on-card,
+.payment .card-number,
+.payment .expiration-date-cvv {
+  position: relative;
+  width: 290px;
+  margin: 16px 0;
+  padding-top: 20px;
+}
+.payment .name-on-card,
+.payment .card-number,
+.expiration-date,
+.cvv {
+  border-bottom: 2px solid rgba(0,0,0, .12);
+}
+.payment form label {
+  display: block;
+  position: absolute;
+  font: 500 14px Dosis, sans-serif;
+  opacity: .40;
+  transform: translate(6px, -20px);
+  transition: all .2s ease;
+}
+.payment form input:focus ~ label,
+.payment form input:not(:placeholder-shown) ~ label {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transform: translate(0, -36px);
+}
+.payment form input {
+  border: none;
+  font: 300 16px "Open Sans", sans-serif;
+  color: rgba(0,0,0, .87);
+}
+#name-on-card-field,
+#card-number-field {
+  width: 260px;
+}
+.payment form input:focus {
+  outline: none;
+}
+
+.expiration-date-cvv {
+  display: flex;
+  justify-content: space-between;
+  flex: 0 0;
+}
+.expiration-date,
+.cvv {
+  position: relative;
+  width: 130px;
+}
+#expiration-date-field,
+#cvv-field {
+  width: 100px;
+}
+
+.confirm-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 36px;
+  width: 136px;
+  background: #00C853;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  transition: all .2s ease;
+}
+.confirm-button:hover {
+  opacity: .8;
+
+}
+.confirm-button__text {
+  display: inline;
+  padding: 0;
+  margin: 0;
+  font: 700 12px "Open Sans", sans-serif;
+  text-transform: uppercase;
+  color: white;
+}
+.confirm-button__icon {
+  margin-left: 10px;
+  fill: white;
+}
+
+#name-on-card-field + svg,
+#card-number-field + svg,
+#expiration-date-field + svg,
+#cvv-field + svg
+{
+  fill: #00C853;
+  opacity: 0;
+  transition: opacity .2s ease;
+}
+#name-on-card-field:valid + svg,
+#card-number-field:valid + svg,
+#expiration-date-field:valid + svg,
+#cvv-field:valid + svg
+{
+  opacity: 1;
+}
+.form-validation-message {
+  font: italic 300 12px "Open Sans", sans-serif;
+  color: #00C853;
+  opacity: 0;
+}
+form:valid > .form-validation-message {
+  opacity: 1;
+}
